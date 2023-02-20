@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class HomeController {
   final _random = Random();
   int count = 0;
+
   Color? randomColor() {
     var newColor = Colors.primaries[_random.nextInt(Colors.primaries.length)]
         [_random.nextInt(9) * 100];
