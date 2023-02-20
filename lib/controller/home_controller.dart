@@ -14,4 +14,15 @@ class HomeController {
   int counter() {
     return count++;
   }
+
+  showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return const AlertDialog(
+          title: Text('Hello from Brazil.'),
+        );
+      },
+    );
+  }
 }

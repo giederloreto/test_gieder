@@ -11,24 +11,13 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final _homeController = HomeController();
 
-  showAlertDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return const AlertDialog(
-          title: Text('Hello from Brazil.'),
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
-        if (_homeController.count > 0 && _homeController.count % 2 == 0) {
-          showAlertDialog(context);
-        }
+        _homeController.count > 0 && _homeController.count % 3 == 0
+            ? _homeController.showAlertDialog(context)
+            : Container();
         setState(() {
           _homeController.counter();
         });
